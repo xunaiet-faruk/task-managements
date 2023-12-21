@@ -1,10 +1,54 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
 
 import { FcGoogle } from "react-icons/fc";
 import Fotter from "../../Component/Fotter/Fotter";
+import { useContext, useState } from "react";
+import { Authcontext } from "../Provider/Authprovider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+    const [passwrong, setpasswrong] = useState('');
+    const { signin, Googlesign } = useContext(Authcontext);
+
+    const location = useLocation();
+    const navigate = useNavigate()
+
+    const handlesubmit = e => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password)
+        signin(email, password)
+            .then(res => {
+
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Successfully login!',
+
+                })
+
+                console.log(res.user)
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error)
+                setpasswrong(error.message)
+            })
+    }
+
+    const handlegoogle = () => {
+        Googlesign()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
     return (
         <div>
             <Navbar/>
@@ -19,7 +63,7 @@ const Login = () => {
                             <div className="card shrink-0 w-[440px] shadow-2xl bg-gray-100">
                                 <h1 className="text-3xl text-center mt-5 font-semibold">Login <span className="text-blue-400">Here</span></h1>
 
-                                <form className="card-body">
+                                <form onSubmit={handlesubmit} className="card-body">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Email</span>
@@ -42,7 +86,7 @@ const Login = () => {
                                     </div>
                                     <p className='p-4 text-center'>Or</p>
                                     <div>
-                                        <button  className='btn btn-outline hover:btn-ghost w-full '>
+                                        <button onClick={handlegoogle} className='btn btn-outline hover:btn-ghost w-full '>
                                             <FcGoogle className='text-xl' /> Google
                                         </button>
                                     </div>

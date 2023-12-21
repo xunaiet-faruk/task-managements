@@ -2,7 +2,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa6";
 const Fotter = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto">
             <footer className="footer footer-center p-10 bg-gray-100 mt-16 text-black">
                 <aside>
                     <img className='w-20' src={"https://i.ibb.co/v3NWXZc/image.png"} alt="" />

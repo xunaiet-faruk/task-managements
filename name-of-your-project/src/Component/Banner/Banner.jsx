@@ -10,7 +10,7 @@ const Banner = () => {
                     <div className="">
                        
                         <p className="mb-5 mt-32 text-white italic font-bold text-4xl">Effortlessly Organize, Collaborate, and Achieve with  Our <br/> Task Management Platform.<br/> Simplify Your Workflow Today.</p>
-                        <button className="btn btn-outline">Explore More</button>
+                        <a href={'/login'}><button className="btn btn-outline">Explore More</button></a>
                     </div>
                 </div>
             </div>
