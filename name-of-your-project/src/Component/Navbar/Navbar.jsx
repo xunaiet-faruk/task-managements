@@ -21,7 +21,7 @@ const Navbar = () => {
             Task
         </NavLink></li>
         <li><NavLink
-            to="/logout"
+            to="/login"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "hover:text-black font-bold hover:bg-yellow-300" : ""
             }
