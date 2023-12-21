@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Benefits from "../Benefit/Benefits";
+import Fotter from "../Fotter/Fotter";
 import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
             <Navbar/>
             <Banner/>
             <Benefits/>
+            <Fotter/>
         </div>
     );
 };
