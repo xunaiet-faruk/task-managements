@@ -12,6 +12,8 @@ import Login from './Authentication/Login/Login.jsx';
 import Register from './Authentication/Register/Register.jsx';
 import Authprovider from './Authentication/Provider/Authprovider.jsx';
 import Task from './Component/Dashboard/Task.jsx';
+import Createtask from './Taskroute/Createtask/Createtask.jsx';
+import Priviouss from './Taskroute/Privious/Priviouss.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,22 @@ const router = createBrowserRouter([
         path:'/task',
         element:<Task></Task>
       }
-    ]
+    ],  
   },
+  {
+    path:'task',
+    element:<Task/>,
+    children:[
+      {
+        path:'create',
+        element:<Createtask/>
+      },
+      {
+        path:'privious',
+        element:<Priviouss/>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

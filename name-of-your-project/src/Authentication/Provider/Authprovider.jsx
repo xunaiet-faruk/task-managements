@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import app from "../../Firebase/Firebases";
 
 export const Authcontext = createContext(null)
-import app from '../../Firebase/Firebases'
 const Googleprovider = new GoogleAuthProvider();
 
 const Authprovider = ({children}) => {

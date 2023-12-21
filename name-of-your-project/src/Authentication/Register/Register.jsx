@@ -76,81 +76,57 @@ const Register = () => {
 
     return (
         <div>
-            <div>
-                <Navbar />
-                <div>
-                    <div>
-                        <div className="hero min-h-screen">
-                            <div className="hero-content flex-col">
-                                <div className="text-center">
-
-
-                                </div>
-                                <div className="card shrink-0 w-[480px] shadow-2xl bg-gray-100">
-                                    <h1 className="text-3xl text-center mt-5 font-semibold">Registation <span className="text-blue-400">Here</span></h1>
-
-                                    <form onSubmit={handlesubmit} className="card-body">
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Name</span>
-                                            </label>
-                                            <input name='name' type="text" placeholder="Name" className="input input-bordered" required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Email</span>
-                                            </label>
-                                            <input name='email' type="email" placeholder="email" className="input input-bordered" required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Image</span>
-                                            </label>
-                                            <input name='image' type="url" placeholder="Image" className="input input-bordered" required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Password</span>
-                                            </label>
-                                            <input name='password' type="password" placeholder="password" className="input input-bordered" required />
-
-                                        </div>
-                                        <div className="form-control mt-6">
-
-
-                                            <input type="submit" value="submit" className="btn bg-black text-white text-bold" />
-
-
-                                        </div>
-                                        <p className='p-4 text-center'>Or</p>
-                                        <div>
-                                            <button onClick={handlegoogle} className='btn btn-outline hover:btn-ghost w-full '>
-                                                <FcGoogle className='text-xl' /> Google
-                                            </button>
-                                        </div>
-                                    </form>
-                                    <p className='font-bold text-center mb-5'>Already Have an Account <Link to={'/login'} className='text-red-500'>Register</Link></p>
-                                    <p className="text-center">
-                                        {
-                                        passwrong && <span className=" text-red-400">{passwrong}</span>
-                                    }
-                                    </p>
-                                    <div>
-                                        {
-                                            error && <p className="text-red-400 font-bold text-center mt-4">{error}</p>
-                                        }
-                                    </div>
-                                    <div>
-                                        {
-                                            error && <p>{error.message}</p>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div className="card mt-12 flex-shrink-0 lg:w-[600px] mb-20 md:w-[550px] w-[400px] shadow-2xl bg-base-100 max-w-screen-7xl mx-auto  bg-gradient-to-r from-gray-500 to-blue-200">
+                <h1 className="text-white  bg-black p-7 rounded-t-lg text-center font-bold text-2xl">Register HERE... </h1>
+                <form onSubmit={handlesubmit} className="card-body">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name="Name" placeholder="Name" className="input input-bordered" required />
                     </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
+                        <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo</span>
+                        </label>
+                        <input type="url" name="image" placeholder="Photo" className="input input-bordered" />
+
+                    </div>
+                    <div className="form-control mt-6">
+                        <button className="btn btn-primary">Register</button>
+                    </div>
+                    <div className="text-center text-white font-bold">
+                        <p>You'r New User Go To <Link to={'/login'} className="text-red-600">Login</Link></p>
+                    </div>
+                </form>
+                <div>
+                    {
+                        error && <p className="text-red-400 font-bold text-center mt-4">{error}</p>
+                    }
                 </div>
-                <Fotter />
+                <div>
+                    {
+                        error && <p>{error.message}</p>
+                    }
+                </div>
+                <div className="text-center">
+                    <button onClick={handlegoogle} className="btn btn-outline lg:px-52 mb-2 rounded-b-xl boreder  text-md hover:bg-error mt-4 font-semibold">
+                        <FcGoogle className="text-2xl ml-2"> </FcGoogle>   Google
+                    </button>
+                </div>
             </div>
         </div>
     );

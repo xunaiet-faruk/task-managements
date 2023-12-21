@@ -30,6 +30,21 @@ const Navbar = () => {
         </NavLink></li>
 
     </>
+
+    const handlelogout = () => {
+
+        logout()
+            .then(() => {
+                console.log('user succecfully')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+
+    }
+
+
     return (
         <div className='max-w-screen-xl mx-auto '>
             <div className="navbar bg-yellow-50 shadow-xl">
@@ -49,6 +64,7 @@ const Navbar = () => {
                        {links}
                     </ul>
                 </div>
+                
               
             </div>
         </div>
