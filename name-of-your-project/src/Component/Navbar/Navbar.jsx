@@ -34,6 +34,14 @@ const Navbar = () => {
         >
             Task
         </NavLink></li>
+        <li><NavLink
+            to="/contact"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "hover:text-black font-bold hover:bg-yellow-300" : ""
+            }
+        >
+            Contact
+        </NavLink></li>
         {user ? 
             <button className='btn-sm mr-32 hover:text-black font-bold hover:bg-yellow-300' onClick={handlelogout}>Logout</button> 
         :
