@@ -17,10 +17,15 @@ const Task = () => {
         <Navbar/>
         <div className="max-w-screen-xl mx-auto">
 
-                <div className="flex">
-                    <div className="w-64 min-h-screen bg-gray-200 pt-12">
+                <div className="lg:flex">
+                    
+                    <div className="lg:w-64 min-h-screen bg-gray-200 pt-12">
+                        <div className="flex justify-center gap-6 items-center">
+                            <img className="w-16 rounded-full" src={user?.photoURL} alt="" />
+                            <p className="text-xl italic font-bold">{user?.displayName}</p>
+                        </div>
                         <ul className="menu p-4 font-bold ">
-                            <img src={user?.displayName} alt="" />
+                         
                             <li>
                                 <NavLink to={'create'} className="hover:text-red-400" >
                                     <IoIosCreate /> Createe Task</NavLink>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosHooks =axios.create({
-    baseURL : "http://localhost:5000"
+    baseURL: "https://task-managment-server-alpha.vercel.app"
 })
 
 const Useaxios = () => {

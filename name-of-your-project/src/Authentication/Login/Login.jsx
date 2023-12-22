@@ -60,7 +60,7 @@ const Login = () => {
 
 
                             </div>
-                            <div className="card shrink-0 w-[440px] shadow-2xl bg-gray-100">
+                            <div className="card shrink-0 lg:w-[440px] w-[370px] md:w-[400px] shadow-2xl bg-gray-100">
                                 <h1 className="text-3xl text-center mt-5 font-semibold">Login <span className="text-blue-400">Here</span></h1>
 
                                 <form onSubmit={handlesubmit} className="card-body">

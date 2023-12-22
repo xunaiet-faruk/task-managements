@@ -18,7 +18,7 @@ const Register = () => {
 
         e.preventDefault()
         const email = e.target.email.value;
-        const name = e.target.name.value;
+        const name = e.target.Name.value;
         const image = e.target.image.value;
         const password = e.target.password.value;
         console.log(email, password, image, name)
@@ -76,7 +76,7 @@ const Register = () => {
 
     return (
         <div>
-            <div className="card mt-12 flex-shrink-0 lg:w-[600px] mb-20 md:w-[550px] w-[400px] shadow-2xl bg-base-100 max-w-screen-7xl mx-auto  bg-gradient-to-r from-gray-500 to-blue-200">
+            <div className="card mt-12 flex-shrink-0 lg:w-[600px] mb-20 md:w-[550px] w-[400px] shadow-2xl bg-base-100 max-w-screen-7xl mx-auto ">
                 <h1 className="text-white  bg-black p-7 rounded-t-lg text-center font-bold text-2xl">Register HERE... </h1>
                 <form onSubmit={handlesubmit} className="card-body">
                     <div className="form-control">
@@ -106,10 +106,10 @@ const Register = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Register</button>
+                        <button className="btn btn-neutral">Register</button>
                     </div>
-                    <div className="text-center text-white font-bold">
-                        <p>You'r New User Go To <Link to={'/login'} className="text-red-600">Login</Link></p>
+                    <div className="text-center text-black font-bold">
+                        <p >You'r New User Go To <Link to={'/login'} className="text-blue-600">Login</Link></p>
                     </div>
                 </form>
                 <div>
@@ -123,7 +123,7 @@ const Register = () => {
                     }
                 </div>
                 <div className="text-center">
-                    <button onClick={handlegoogle} className="btn btn-outline lg:px-52 mb-2 rounded-b-xl boreder  text-md hover:bg-error mt-4 font-semibold">
+                    <button onClick={handlegoogle} className="btn btn-outline bg-black lg:px-52 mb-4 w-full  rounded-b-xl boreder  text-md hover:bg-black text-white mt-4 font-semibold">
                         <FcGoogle className="text-2xl ml-2"> </FcGoogle>   Google
                     </button>
                 </div>

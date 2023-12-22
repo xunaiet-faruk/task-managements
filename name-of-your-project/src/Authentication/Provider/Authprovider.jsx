@@ -1,13 +1,14 @@
-import { createContext, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../../Firebase/Firebases";
+const Googleprovider = new GoogleAuthProvider();
 
 export const Authcontext = createContext(null)
-const Googleprovider = new GoogleAuthProvider();
 
 const Authprovider = ({children}) => {
     const [loading, setloading] = useState(true)
     const [user, setStay] = useState(null)
+    console.log(user);
     const auth = getAuth(app)
 
     const createuser = (email, password) => {
@@ -30,6 +31,20 @@ const Authprovider = ({children}) => {
         return signInWithPopup(auth, Googleprovider)
 
     }
+
+    useEffect(() => {
+
+        const unsubscribe = onAuthStateChanged(auth, currenuser => {
+            setloading(false)
+            setStay(currenuser)
+            console.log('user login here', currenuser)
+        })
+        return () => {
+            unsubscribe();
+        }
+
+
+    }, [])
 
     const Authemail = { createuser, signin, signOut, logout, user, Googlesign, loading }
 

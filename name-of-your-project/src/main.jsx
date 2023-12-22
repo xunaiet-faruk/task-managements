@@ -15,6 +15,7 @@ import Task from './Component/Dashboard/Task.jsx';
 import Createtask from './Taskroute/Createtask/Createtask.jsx';
 import Priviouss from './Taskroute/Privious/Priviouss.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Privateroute from './Firebase/Privateroute/Privateroute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/task',
-        element:<Task></Task>
+        element: <Privateroute><Task></Task></Privateroute>
       }
     ],  
   },

@@ -15,8 +15,8 @@ const Benefits = () => {
 
          {
 
-benefi?.map(item => <div key={item.id}>
-    <div className="h-[370px] bg-base-100 shadow-xl hover:shadow-yellow-200 image-full">
+                    benefi?.map(item => <div className="p-5 lg:p-0 md:p-0 " key={item.id}>
+    <div className="lg:h-[370px]  bg-base-100 rounded-xl shadow-xl hover:shadow-yellow-200 image-full">
         <figure><img className="w-full h-[240px]" src={item?.image} alt="Shoes" /></figure>
         <div className="card-body">
             <h1 className="text-black text-xl font-bold">{item?.profession}</h1>
